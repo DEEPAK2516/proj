@@ -26,20 +26,14 @@
             fetch(sheetURL)
                 .then(response => response.text())
                 .then(data => {
-                    // Split the HTML content to extract values
-                    const values = data.match(/<td class="s1">[^<]*<\/td>/g);
-
-                    // Extract and format the values
-                    const a = values[0].replace(/<\/?[^>]+(>|$)/g, '');
-                    const b = values[1].replace(/<\/?[^>]+(>|$)/g, '');
-                    const c = values[2].replace(/<\/?[^>]+(>|$)/g, '');
-                    const d = values[3].replace(/<\/?[^>]+(>|$)/g, '');
+                    // Update the code to extract the data based on the actual HTML structure
+                    // For example, you might use document.querySelector or other methods to find the values
 
                     // Display the values on the webpage
-                    document.getElementById("aValue").textContent = "A Value: " + a;
-                    document.getElementById("bValue").textContent = "B Value: " + b;
-                    document.getElementById("cValue").textContent = "C Value: " + c;
-                    document.getElementById("dValue").textContent = "D Value: " + d;
+                    document.getElementById("aValue").textContent = "A Value: [Value from Google Sheets]";
+                    document.getElementById("bValue").textContent = "B Value: [Value from Google Sheets]";
+                    document.getElementById("cValue").textContent = "C Value: [Value from Google Sheets]";
+                    document.getElementById("dValue").textContent = "D Value: [Value from Google Sheets]";
                 })
                 .catch(error => console.error("Error fetching data: " + error));
         }
